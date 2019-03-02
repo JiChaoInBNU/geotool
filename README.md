@@ -1,11 +1,11 @@
 # Geo Tool
-
+<img width="150" height="150" src="src/ico/title.png"/>
 A simple tool implemetation on gdal. Now supporting grid clip, clip with shape file, mask with shape file and merge tif. It has been tailored for computer vision in remote sensing. Help you construct your pipline easily! 
 **Also see an visiliazed UI on Baidu Pan: https://pan.baidu.com/s/1FfDVzu3mlM9wItu7KVTl3A Fetch code: 2333**
 
 ## Getting Started
 
-<div><img width="150" height="150" src="src/ico/title.png"/>
+<div align='center'>
 <img width="500" height="400" src="src/ico/UI.png"/>
 </div>
 
