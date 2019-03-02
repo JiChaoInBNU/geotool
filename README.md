@@ -5,7 +5,7 @@ A simple tool implemetation on gdal. Now supporting grid clip, clip with shape f
 
 ## Getting Started
 
-<div align=center><img width="200" height="150" src="src/ico/GeoTool.png"/></div>
+<div align=center><img width="150" height="150" src="src/ico/title.png"/></div>
 
 ### Prerequisites
 
