@@ -6,7 +6,7 @@ A simple tool implemetation on gdal. Now supporting grid clip, clip with shape f
 ## Getting Started
 
 <div><img width="150" height="150" src="src/ico/title.png"/>
-<img width="150" height="150" src="src/ico/UI.png"/>
+<img width="200" height="300" src="src/ico/UI.png"/>
 </div>
 
 ### Prerequisites
