@@ -9,19 +9,19 @@ A simple tool implemetation on gdal. Now supporting grid clip, clip with shape f
 
 ### Prerequisites
 
-GDAL
-numpy >= 1.11.1
+
 
 ```
-Give examples
+GDAL
+numpy >= 1.11.1
 ```
 
 ### Installing
 
-pip install geotool
+
 
 ```
-Give the example
+pip install geotool
 ```
 
 And repeat
