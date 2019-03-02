@@ -1,14 +1,16 @@
-# Project Title
+# Geo Tool
 
-One Paragraph of project description goes here
+A simple tool implemetation on gdal. Now supporting grid clip, clip with shape file, mask with shape file and merge tif. It has been tailored for computer vision in remote sensing. Help you construct your pipline easily! 
+**Also see an visiliazed UI on Baidu Pan:**
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+<div align=center><img width="150" height="150" src="src/ico/GeoTool.png"/></div>
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+GDAL
+numpy >= 1.11.1
 
 ```
 Give examples
@@ -16,9 +18,7 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+pip install geotool
 
 ```
 Give the example
