@@ -24,7 +24,7 @@ pip install geotool
 
 ## Usage Example
 ```python
-from geotool.tif_process import GeoTif
+from geotool.tif_process import GeoTif, define_ref_predict
 from geotool.tif_merge import run_merge
 tif = GeoTif('xx.tif')
 # if you want to clip tif with grid reserved geo reference
@@ -33,8 +33,11 @@ tif.clip_tif_with_grid(512, 'out_dir')
 tif.clip_tif_with_shapefile('shapefile.shp', 'out_dir')
 # if you want to mask tif with shape file
 tif.mask_tif_with_shapefile('shapefile.shp', 'save_path.tif')
+# After you get your model results(pngs or tifs), you can redefine their reference
+# with you clipped before, notice they must match names
+define_ref_predict('cipped_before_dir', 'your_result_dir', 'save_dir')
 # if you want to merge tifs
-run_merge("tif_dir", "save_path.tif")
+run_merge('tif_dir', 'save_path.tif')
 ```
 
 ## Authors
