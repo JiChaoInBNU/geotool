@@ -23,14 +23,14 @@ numpy >= 1.11.1
 ### Installing
 
 ```
-pip install geotool
+pip install git+https://github.com/Kindron/geotool.git
 ```
 
 ## Usage Example
 ```python
-from geotool.tif_process import GeoTif, define_ref_predict
+from geotool.tif_process import GeoTiff, define_ref_predict
 from geotool.tif_merge import run_merge
-tif = GeoTif('xx.tif')
+tif = GeoTiff('xx.tif')
 # if you want to clip tif with grid reserved geo reference
 tif.clip_tif_with_grid(512, 'out_dir')
 # if you want to clip tif with shape file
