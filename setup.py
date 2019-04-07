@@ -11,7 +11,7 @@ setup(
     version='0.1.0',
     description='a tool implementation on gdal',
     keywords='geo tool python',
-    packages=find_packages(),
+    packages=['geotool'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
