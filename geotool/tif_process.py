@@ -1,6 +1,6 @@
 # Date:2018.11.12
 # Author: Kingdrone
-# A tool implementation on gdal API
+# A geotool implementation on gdal API
 # functions:
 # 1. clip raster with shapefile
 # 2. clip raster with grid
@@ -18,7 +18,7 @@ gdal.UseExceptions()
 class GeoTiff(object):
     def __init__(self, tif_path):
         """
-        A tool for Remote Sensing Image
+        A geotool for Remote Sensing Image
         Args:
             tif_path: tif path
         Examples::
