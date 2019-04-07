@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 install_requires = [
     'numpy>=1.11.1',
-    'gdal',
+    'GDAL=2.3.3',
 ]
 setup(
     name='geotool',
