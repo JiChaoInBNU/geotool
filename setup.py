@@ -5,8 +5,9 @@ install_requires = [
     'numpy>=1.11.1',
     'GDAL',
 ]
+
 setup(
-    name='geotool',
+    name='tool',
     version='0.1.0',
     description='a tool implementation on gdal',
     keywords='geo tool python',
@@ -19,7 +20,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-    url='https://github.com/Kindron/geotool.git',
+    url='https://github.com/Kindron/tool.git',
     author='Kingdrone',
     author_email='kingdrone@163.com',
     license='GPLv3',
