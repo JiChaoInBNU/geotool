@@ -91,6 +91,7 @@ class Demo(QMainWindow, Ui_MainWindow):
                            %(self.shapefile_path, ft, num_ft, minX, minY, maxX, maxY)
             if self.shapefile_path != "":
                 self.SHAPEFILE_TXTEDIT.setText(shpfile_txt_info)
+            self.CLIP_FDNAME_COMBOX.addItems(self.shapefile.fieldname_list)
         except Exception:
             QMessageBox.information(self,  # 使用infomation信息框
                                             "错误",
@@ -124,7 +125,8 @@ class Demo(QMainWindow, Ui_MainWindow):
                     QMessageBox.information(self, "错误", "尚未读取shapefile！")
                     return
                 self.process_handler.start()
-                tw = ThreadWrapper(self.tif.clip_tif_with_shapefile,
+                clip_fdname = self.CLIP_FDNAME_COMBOX.currentText()
+                tw = ThreadWrapper(self.tif.clip_tif_with_shapefile, clip_fdname,
                                    self.shapefile_path, self.save_dir)
                 tw.start()
 
@@ -208,10 +210,6 @@ class Demo(QMainWindow, Ui_MainWindow):
 
     def update_process(self, s):
         self.PROCESS_BAR.setValue(s)
-
-
-
-
 
 
 if __name__ == "__main__":

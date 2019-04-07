@@ -6,9 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QProgressBar, QPushButton
-from PyQt5.QtCore import Qt, QBasicTimer
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -45,7 +43,7 @@ class Ui_MainWindow(object):
         self.label_6.setGeometry(QtCore.QRect(40, 460, 61, 23))
         self.label_6.setObjectName("label_6")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(30, 230, 241, 111))
+        self.widget.setGeometry(QtCore.QRect(30, 230, 241, 130))
         self.widget.setObjectName("widget")
         self.CLIP_SIZE_LINEEDIT = QtWidgets.QLineEdit(self.widget)
         self.CLIP_SIZE_LINEEDIT.setGeometry(QtCore.QRect(80, 70, 113, 23))
@@ -54,6 +52,10 @@ class Ui_MainWindow(object):
         self.CLIP_TYPE_COMBOX.setGeometry(QtCore.QRect(80, 40, 111, 23))
         self.CLIP_TYPE_COMBOX.setObjectName("CLIP_TYPE_COMBOX")
 
+        self.CLIP_FDNAME_COMBOX = QtWidgets.QComboBox(self.widget)
+        self.CLIP_FDNAME_COMBOX.setGeometry(QtCore.QRect(80, 100, 111, 23))
+        self.label_15 = QtWidgets.QLabel(self.centralwidget)
+        self.label_15.setGeometry(QtCore.QRect(40, 330, 61, 23))
 
         self.label_3 = QtWidgets.QLabel(self.widget)
         self.label_3.setGeometry(QtCore.QRect(10, 40, 71, 23))
@@ -180,6 +182,7 @@ class Ui_MainWindow(object):
         self.label_7.setText(_translate("MainWindow", "剪裁位置(有坐标系)"))
         self.OPEN_GEOREFED_BN.setText(_translate("MainWindow", "打开"))
         self.OPEN_MASK_BN.setText(_translate("MainWindow", "打开"))
+        self.label_15.setText(_translate("MainWindow", "shp字段"))
         self.label_9.setText(_translate("MainWindow", "分类结果位置(无坐标系)"))
         self.label_11.setText(_translate("MainWindow", "定义坐标系"))
         self.label_12.setText(_translate("MainWindow", "TIF位置(有坐标系)"))

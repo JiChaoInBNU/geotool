@@ -1,7 +1,7 @@
 from PyQt5.QtCore import *
 import threading
 
-log_path = "src/log/log.txt"
+log_path = "../src/log/log.txt"
 def reset_log():
     with open(log_path, 'w') as w:
         w.write(str(0))

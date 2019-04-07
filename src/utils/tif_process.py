@@ -138,7 +138,7 @@ class GeoTiff(object):
         Returns:
 
         """
-        shapefile_path, save_dir = args
+        fieldname, shapefile_path, save_dir = args
         driver = ogr.GetDriverByName('ESRI Shapefile')
         dataSource = driver.Open(shapefile_path, 0)
         if dataSource is None:
@@ -196,17 +196,16 @@ class GeoTiff(object):
 
                     # save the cilpped image with geo_reference
                     try:
-                        save_path = os.path.join(save_dir, str(i + 1) + '.tif')
+                        save_name = polygon.GetFieldAsString(fieldname)
+                        save_path = os.path.join(save_dir, save_name + '.tif')
                         save_image_with_georef(clipped_image, gtiffDriver, self.dataset, p_ulx, p_uly, save_path)
                         polygon.Destroy()  # delete feature
                         print('clip successfully！(%d/%d)' % (i + 1, poly_num))
-
                         # process log
                         write_log(str(int((i + 1)/poly_num*100)))
 
                     except Exception:
                         raise IOError('clip failed!%d' % (i + 1))
-
             else:
                 pts = geom.GetGeometryRef(0)
 
@@ -238,6 +237,7 @@ class GeoTiff(object):
 
                 # save the cilpped image with geo_reference
                 try:
+                    save_name = polygon.GetFieldAsString(fieldname)
                     save_path = os.path.join(save_dir, str(i+1) + '.tif')
                     save_image_with_georef(clipped_image, gtiffDriver, self.dataset, p_ulx, p_uly, save_path)
                     polygon.Destroy()  # delete feature
@@ -439,7 +439,10 @@ class GeoShaplefile(object):
         self.minX, self.maxX, self.minY, self.maxY = (0, 0, 0, 0)
         self.feature_type = ""
         self.feature_num = 0
+        self.fieldname_list = []
         self.open_shapefile()
+
+
     def open_shapefile(self):
         driver = ogr.GetDriverByName('ESRI Shapefile')
         dataSource = driver.Open(self.file_path, 0)
@@ -451,9 +454,22 @@ class GeoShaplefile(object):
 
         self.layer = dataSource.GetLayer(0)
         self.minX, self.maxX, self.minY, self.maxY = self.layer.GetExtent()
+        # layer.g
         self.feature_num = self.layer.GetFeatureCount()  # get poly count
+
+
+        ldefn = self.layer.GetLayerDefn()
+        for n in range(ldefn.GetFieldCount()):
+            fdefn = ldefn.GetFieldDefn(n)
+            self.fieldname_list.append(fdefn.name)
+
+
         if self.feature_num > 0:
             polygon = self.layer.GetFeature(0)
             geom = polygon.GetGeometryRef()
             # feature type
             self.feature_type = geom.GetGeometryName()
+
+if __name__ == '__main__':
+    shp = GeoShaplefile('C:/Users/mi/Desktop/data/wgshy1.shp')
+    print(shp.fieldname_list)
